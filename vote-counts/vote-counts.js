@@ -19,7 +19,7 @@ function fetch_vote_counts(){
         var post_id = matched_question[3]
     }
     else {
-        error("Can't find match, check URL.")
+        display_error("Can't find match, check URL.")
         return;
     }
 
@@ -35,7 +35,7 @@ function fetch_vote_counts(){
 function success(return_data) {
     console.log(return_data)
     if(return_data["items"] == false) {
-        error("Could not load post, might be deleted");
+        display_error("Could not load post, might be deleted");
         return;
     }
     upc = return_data["items"][0]["up_vote_count"]
