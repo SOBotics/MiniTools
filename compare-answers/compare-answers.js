@@ -31,7 +31,7 @@ function success(return_data) {
     console.log(return_data)
     quota = return_data["quota_remaining"]
     $("#quota").html(quota)
-    $("#data-table").html("<thead><tr><th>Created On</th><th>Score</th><th>Up Vote Count</th><th>Down Vote Count</th><th>Flair</th></tr></thead>")
+    $("#data-table").html("<thead><tr><th>Created On</th><th>Score</th><th>Up Vote Count</th><th>Down Vote Count</th><th>User</th></tr></thead>")
 
     if(return_data["items"] == false) {
         display_error("Could not load post, might be deleted");
@@ -49,7 +49,7 @@ function success(return_data) {
 
         var answer = answers[i]
 
-        var creation_date = answer["creation_date"]
+        var creation_date = new Date(answer["creation_date"]*1000).toISOString()
         var link = answer["link"]
         var creation_date_col = "<td><a href='"+link+"'>"+creation_date+"<a></td>"
 
