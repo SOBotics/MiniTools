@@ -72,8 +72,9 @@ function success(return_data) {
 
     }
     $("#data-table").append(tbody)
-    $("#data-table").DataTable(        {"paging":   false,
-                                       "searching": false,
-                                       "info":     false})
+    $("#data-table").DataTable( {"paging":   false,
+                                 "searching": false,
+                                 "info":     false,
+                                 "destroy": true,})
     $("#data").show()
 }
