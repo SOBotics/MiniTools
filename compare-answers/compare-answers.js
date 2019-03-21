@@ -63,7 +63,8 @@ function success(return_data) {
         var score_col = "<td>"+score+"</td>"
 
         var userid = answer["owner"]["user_id"]
-        var flair = "<td><img src='https://"+site_name+"/users/flair/"+userid+".png' /></td>"
+        var userlink = answer["owner"]["link"]
+        var flair = "<td><a href='"+userlink+"'><img alt='"+userid+"' src='https://"+site_name+"/users/flair/"+userid+".png' /></a></td>"
 
         var div_string = '<tr>' + creation_date_col + score_col + upv_count_col + dnv_count_col + flair + '</tr>'
         var row = $(div_string)
