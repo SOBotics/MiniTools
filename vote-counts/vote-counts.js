@@ -46,9 +46,3 @@ function success(return_data) {
     $("#dwn-cnt").html(doc)
     $("#data").show()
 }
-
-function error(message) {
-    console.log("error: "+message)
-    $("#error-msg").html(message)
-    $("#error").show()
-}
