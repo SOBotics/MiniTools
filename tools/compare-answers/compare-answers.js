@@ -48,6 +48,7 @@ function success(return_data) {
     for (i=0; i<answers.length; i++){
 
         var answer = answers[i]
+        var is_accepted = answer["is_accepted"]
 
         var creation_date = new Date(answer["creation_date"]*1000).toISOString()
         var link = answer["link"]
@@ -66,7 +67,11 @@ function success(return_data) {
         var userlink = answer["owner"]["link"]
         var flair = "<td><a href='"+userlink+"'><img alt='"+userid+"' src='https://"+site_name+"/users/flair/"+userid+".png' /></a></td>"
 
-        var div_string = '<tr>' + creation_date_col + score_col + upv_count_col + dnv_count_col + flair + '</tr>'
+        var row_type = "<tr>"
+        if (is_accepted) {
+            row_type = "<tr class='accepted'>"
+        }
+        var div_string = row_type + creation_date_col + score_col + upv_count_col + dnv_count_col + flair + '</tr>'
         var row = $(div_string)
 
         tbody.append(row)
