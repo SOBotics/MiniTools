@@ -30,7 +30,6 @@ function fetch_answers() {
 function success(return_data) {
     console.log(return_data);
     $("#quota").html(return_data.quota_remaining);
-    $("#data-table").html("<thead><tr><th>Created On</th><th>Score</th><th>Up Vote Count</th><th>Down Vote Count</th><th>User</th></tr></thead>");
 
     if(return_data.items == false) {
         display_error("Could not load post, might be deleted");
@@ -42,6 +41,8 @@ function success(return_data) {
         display_error("There are no answers to this question");
         return;
     }
+
+    $("#data-table").html("<thead><tr><th>Created On</th><th>Score</th><th>Up Vote Count</th><th>Down Vote Count</th><th>User</th></tr></thead>");
 
     var tbody = $("<tbody></tbody>");
     for (i = 0; i < answers.length; i++) {
