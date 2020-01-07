@@ -1,5 +1,5 @@
-$("#data").hide()
-$("#error").hide()
+$("#data").hide();
+$("#error").hide();
 const api_url = STACKEXCHANGE_API + "/posts";
 const question_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(q|questions)\/(\d+)(\/.*)?$/i;
 const answer_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(questions\/\d+?\/.*\/(\d+?)#|a\/)(\d+)(?:\/(?:\d+?(?:\/)?)?)?$/i;
