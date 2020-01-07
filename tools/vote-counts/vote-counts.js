@@ -4,19 +4,19 @@ $("#error").hide()
 function fetch_vote_counts(){
     var api_url = STACKEXCHANGE_API+"/posts"
     var post_url = $("#postLink").val()
-    var answer_pattern = /(https:\/\/)?(.*?)\/.*?\/(\d+?)(\/.*)?\/(\d+)#(\d+)$/i
+    var answer_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(questions\/\d+?\/.*\/(\d+?)#|a\/)(\d+)(?:\/(?:\d+?(?:\/)?)?)?$/i 
     var matched_answer = post_url.match(answer_pattern)
-    var question_pattern = /(https:\/\/)?(.*?)\/.*?\/(\d+?)(\/.*)?$/i
+    var question_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(q|questions)\/(\d+)(\/.*)?$/i 
     var matched_question = post_url.match(question_pattern)
     if (matched_answer){
         console.log("matched answer")
-        var site_name = matched_answer[2]
-        var post_id = matched_answer[5]
+        var site_name = matched_answer[1]
+        var post_id = matched_answer[6]
     }
     else if (matched_question){
         console.log("matched question")
-        var site_name = matched_question[2]
-        var post_id = matched_question[3]
+        var site_name = matched_question[1]
+        var post_id = matched_question[6]
     }
     else {
         display_error("Can't find match, check URL.")

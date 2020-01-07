@@ -5,12 +5,12 @@ var site_name = null
 function fetch_answers(){
     var api_url = STACKEXCHANGE_API+"/questions"
     var post_url = $("#postLink").val()
-    var question_pattern = /(https:\/\/)?(.*?)\/.*?\/(\d+?)(\/.*)?$/i
+    var question_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(q|questions)\/(\d+)(\/.*)?$/i
     var matched_question = post_url.match(question_pattern)
     if (matched_question){
         console.log("matched question")
-        site_name = matched_question[2]
-        var post_id = matched_question[3]
+        site_name = matched_question[1]
+        var post_id = matched_question[6]
     }
     else {
         error("Can't find match, check URL.")
