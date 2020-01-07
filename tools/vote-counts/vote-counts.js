@@ -5,6 +5,8 @@ const question_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superu
 const answer_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(questions\/\d+?\/.*\/(\d+?)#|a\/)(\d+)(?:\/(?:\d+?(?:\/)?)?)?$/i;
 
 function fetch_vote_counts() {
+    $("#error").hide();
+    $("#data").hide();
     var post_url = $("#postLink").val();
     var matched_answer = post_url.match(answer_pattern);
     var matched_question = post_url.match(question_pattern);
