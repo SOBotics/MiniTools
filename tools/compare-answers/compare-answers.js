@@ -57,8 +57,12 @@ function success(return_data) {
         var score_col = "<td>" + answer.score + "</td>";
 
         var userid = answer.owner.user_id;
-        var flair = "<td><a href='" + answer.owner.link + "'><img alt='" + userid + "' src='https://" + site_name + "/users/flair/" + userid + ".png' /></a></td>";
-
+        if (userid) {
+            var flair = "<td><a href='" + answer.owner.link + "'><img alt='" + userid + "' src='https://" + site_name + "/users/flair/" + userid + ".png' /></a></td>";
+        }
+        else {
+            flair = "<td align='center'>user deleted</td>";
+        }
         var row_type = "<tr>";
         if (answer.is_accepted) {
             row_type = "<tr class='accepted'>";
