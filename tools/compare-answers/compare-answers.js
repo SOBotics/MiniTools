@@ -5,6 +5,8 @@ const question_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superu
 const api_url = STACKEXCHANGE_API + "/questions";
 
 function fetch_answers() {
+    $("#error").hide();
+    $("#data").hide();
     var post_url = $("#postLink").val();
     var matched_question = post_url.match(question_pattern);
     if (matched_question){
