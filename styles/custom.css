@@ -17,3 +17,14 @@ v-span {
 .accepted {
   background-color: #bfeabb;
 }
+
+pre {
+  margin-bottom: 1em;
+  padding: 12px 8px;
+  width: auto;
+  max-height: 600px;
+  overflow: auto;
+  background-color: #eff0f1;
+  border-radius: 3px;
+  white-space: pre-wrap
+}
