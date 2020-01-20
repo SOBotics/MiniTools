@@ -1,7 +1,7 @@
 $("#data").hide();
 $("#error").hide();
 const api_url = STACKEXCHANGE_API + "/users";
-const user_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/u(?:sers)?\/(\d+?)(?:\/(?:[a-z0-9-]*(?:\/)?)?)?$/i;
+const user_pattern = /https:\/\/(((?:.+\.)?((stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)))\/u(?:sers)?\/(\d+?)(?:\/(?:[a-z0-9-]*(?:\/)?)?)?$/i;
 
 function retrieve_network_id() {
     $("#data").hide();
@@ -10,7 +10,7 @@ function retrieve_network_id() {
     var matched_profile = user_profile_url.match(user_pattern);
     if (matched_profile) {
         console.log("matched user profile");
-        site_name = matched_profile[1];
+	var site_name = matched_profile[1];
         var user_id = matched_profile[5];
     }
     else {
