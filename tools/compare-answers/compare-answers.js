@@ -1,7 +1,6 @@
 $("#error").hide();
 $("#data").hide();
-var site_name = null;
-const question_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(q|questions)\/(\d+)(\/.*)?$/i;
+const question_pattern = /https:\/\/(((?:.+\.)?((stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)))\/(q|questions)\/(\d+)(\/.*)?$/i;
 const api_url = STACKEXCHANGE_API + "/questions";
 
 function fetch_answers() {
@@ -11,7 +10,7 @@ function fetch_answers() {
     var matched_question = post_url.match(question_pattern);
     if (matched_question){
         console.log("matched question");
-        site_name = matched_question[1];
+        window.site_name = matched_question[1];
         var post_id = matched_question[6];
     }
     else {
