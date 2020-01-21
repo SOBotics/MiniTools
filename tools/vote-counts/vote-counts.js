@@ -1,8 +1,8 @@
 $("#data").hide();
 $("#error").hide();
 const api_url = STACKEXCHANGE_API + "/posts";
-const question_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(q|questions)\/(\d+)(\/.*)?$/i;
-const answer_pattern = /https:\/\/((((.+)\.)stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)\/(questions\/\d+?\/.*\/(\d+?)#|a\/)(\d+)(?:\/(?:\d+?(?:\/)?)?)?$/i;
+const question_pattern = /https:\/\/(((?:.+\.)?((stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)))\/(q|questions)\/(\d+)(\/.*)?$/i;
+const answer_pattern = /https:\/\/(((?:.+\.)?((stackexchange|stackoverflow|superuser|serverfault|askubuntu|stackapps)\.com|mathoverflow\.net)))\/(questions\/\d+?\/.*\/(\d+?)#|a\/)(\d+)(?:\/(?:\d+?(?:\/)?)?)?$/i;
 
 function fetch_vote_counts() {
     $("#error").hide();
@@ -13,7 +13,7 @@ function fetch_vote_counts() {
     if (matched_answer) {
         console.log("matched answer");
         var site_name = matched_answer[1];
-        var post_id = matched_answer[6];
+        var post_id = matched_answer[7];
     }
     else if (matched_question) {
         console.log("matched question");
@@ -42,7 +42,7 @@ function success(return_data) {
     }
 
     $("#quota").html(return_data.quota_remaining);
-    $("#upv-cnt").html(return_data.items[0].up_vote_count);
-    $("#dwn-cnt").html(return_data.items[0].down_vote_count);
+    $("#upvote-count").html(return_data.items[0].up_vote_count);
+    $("#downvote-count").html(return_data.items[0].down_vote_count);
     $("#data").show();
 }

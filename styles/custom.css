@@ -1,5 +1,30 @@
-.nav-span{color:white;}
-.main-content{padding-top:20px;}
-.page-header{padding-bottom:20px;}
-.pad-top{padding-top:20px;}
-.accepted{background-color:#bfeabb;}
+v-span {
+  color: white;
+}
+
+.main-content {
+  padding-top: 20px;
+}
+
+.page-header {
+  padding-bottom: 20px;
+}
+
+.pad-top {
+  padding-top: 20px;
+}
+
+.accepted {
+  background-color: #bfeabb;
+}
+
+pre {
+  margin-bottom: 1em;
+  padding: 12px 8px;
+  width: auto;
+  max-height: 600px;
+  overflow: auto;
+  background-color: #eff0f1;
+  border-radius: 3px;
+  white-space: pre-wrap
+}
