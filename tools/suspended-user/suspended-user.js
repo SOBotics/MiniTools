@@ -2,7 +2,8 @@ const sitenames = ["stackoverflow","serverfault","superuser","meta","webapps","w
 const api_url = STACKEXCHANGE_API + "/users";
 
 function get_suspended_users() {
-	$("#error").hide();
+    $("#error").hide();
+    $("#data").hide();
     const time_period = parseInt($("#time-period").val());
     const sitename = $("#sitename").val();
     if (!time_period || !sitename)  { // time period or sitename is not defined
@@ -31,6 +32,7 @@ function get_suspended_users() {
 }
 
 function loop() {
+	$("#data").show();
     setTimeout(function () {
 		$.get(api_url, data, async function(results) {
 			$("#quota").html(results.quota_remaining);
@@ -45,4 +47,5 @@ function loop() {
 			if (results.has_more) loop();
 		})
     }, 2000);
+	console.log("Process finished!");
 }
