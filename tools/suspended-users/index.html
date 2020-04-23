@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MiniTools: Retrieve suspended users on creation</title>
+
+    <link href="/images/SoboticsLogo.png" rel="icon" >
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="/styles/custom.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">MiniTools</a>
+        <div class="nav-quota">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <span class="nav-span">Quota - <span id="quota">0</span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container main-content" id="main">
+
+    <div class="row page-header text-center">
+        <h6 class="text-center">
+            Retrieve suspended users on creation
+        </h6>
+    </div>
+
+    <div class="row">
+        <div class="col-5 pad-top">
+            <label for="time-period" class="s-label">Time period in hours (number less than 24)</label>
+        </div>
+        <div class="col-1 pad-top">
+            <input class="form-control" type="url" id="time-period" />
+        </div>
+        <br/>
+    </div>
+    <div class="row">
+    	<div class="col-5 pad-top">
+            <label for="sitename" class="s-label">Site name (e.g. stackoverflow.com)</label>
+        </div>
+        <div class="col-3 pad-top">
+            <input class="form-control" type="url" id="sitename" />
+        </div>
+     </div>
+     <div class="pad-top">
+     	<button class="btn btn-primary" type="submit" onclick="get_suspended_users()">Submit</button>
+     </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-danger alert-dismissible" role="alert" id="error" style="display:none">
+                <span id="error-msg"></span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-5">
+            <div id="data"></div>
+        </div>
+    </div>
+    
+</div>
+
+<br/>
+<br/>
+<br/>
+<hr/>
+
+<div class="container">
+    <footer class="footer">
+        <sub class="center-block"> Made by the <a href="https://sobotics.org/">SOBotics</a> team.
+            Source code on <a href="https://github.com/SOBotics/MiniTools">GitHub</a>.
+            Content provided by <a href="https://api.stackexchange.com/">Stack Exchange API</a>
+            under the <a href="https://creativecommons.org/licenses/by-sa/3.0/"> CC BY-SA 3.0 license</a>.
+        </sub>
+    </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="/scripts/global.js"></script>
+<script src="suspended-users.js"></script>
+
+</body>
+
+</html>
