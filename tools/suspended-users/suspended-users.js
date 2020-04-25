@@ -8,8 +8,8 @@ function get_suspended_users() {
     if (!time_period || !sitename)  { // time period or sitename is not defined
     	display_error("You can't leave an input blank.");
     	return;
-	} else if (!Number.isInteger(time_period) || time_period > 24 || time_period < 1) { //must be (positive) int <=24
-    	display_error("Number must be an integer between 1 and 100.");
+	} else if (!Number.isInteger(time_period) || time_period > 48 || time_period < 1) { //must be (positive) int <=48
+    	display_error("Number must be an integer between 1 and 48.");
     	return;
 	}
 
