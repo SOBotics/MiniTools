@@ -42,6 +42,6 @@ function loop() {
 			data.page++;
 			if (results.has_more) loop();
 		})
-	}, 2000);
+	}, 100);
 	console.log("Process finished!");
 }
