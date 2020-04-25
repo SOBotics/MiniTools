@@ -54,13 +54,14 @@
         </div>
      </div>
      <div class="pad-top">
-     	<button class="btn btn-primary" type="submit" onclick="get_suspended_users()">Submit</button>
+         <button class="btn btn-primary" type="submit" onclick="get_suspended_users()">Submit</button>
+         <button class="btn" type="submit" onclick="$('#info').toggle()">Show/hide logs</button>
      </div>
     <br />
     <br />
     <div class="row">
         <div class="col-12">
-            <div class="alert alert-danger alert-dismissible" role="alert" id="error" style="display:none">
+            <div class="alert alert-danger" role="alert" id="error" style="display:none">
                 <span id="error-msg"></span>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -71,7 +72,11 @@
             <div id="data"></div>
         </div>
     </div>
-    
+    <div class="alert alert-info" role="alert" id="info" style="display: none">
+        <span id="info-progress"></span>
+        <span id="info-msg">Nothing logged yet!</span>
+    </div>
+
 </div>
 
 <br/>

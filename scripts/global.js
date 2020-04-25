@@ -6,3 +6,8 @@ function display_error(message) {
     $("#error-msg").html(message);
     $("#error").show();
 }
+
+function log(info) {
+    console.info(info);
+    $("#info-msg").append(info + "<br/>");
+}

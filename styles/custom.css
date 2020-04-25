@@ -28,3 +28,9 @@ pre {
   border-radius: 3px;
   white-space: pre-wrap
 }
+
+.alert-info {
+  left: 70%;
+  top: 140px;
+  position: fixed;
+}
